@@ -1,0 +1,16 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/trust_payment
+          jwk-set-uri: http://localhost:8081/realms/trust_payment/protocol/openid-connect/certs
+
+keycloak:
+  enable-basic-auth: true
+  auth-server-url: http://localhost:8081/
+  realm: trust_payment
+  resource: basic_client
+  credentials:
+    secret: FO3VSdeRbVPyRI1ORFQGRSeQvvp8jKLM
+  ssl-required: external
